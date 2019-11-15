@@ -18,11 +18,11 @@ while True:
     piece = piece[:-1]
 
     # Save data part
-    if addr == addr0:
+    if addr[0] == addr0:
         anki0["clockwise"] = clock_wise
         anki0["piece"] = piece
 
-    if addr == addr1:
+    if addr[0] == addr1:
         anki1["clockwise"] = clock_wise
         anki1["piece"] = piece
 
