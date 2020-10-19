@@ -1,5 +1,5 @@
-from overdrive import Overdrive
 import socket
+from overdrive import Overdrive
 
 tmp_clockwise = True
 tmp_piece = 0
