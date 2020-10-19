@@ -27,7 +27,9 @@ while True:
         anki1["piece"] = piece
 
     # Logic part
-    if ((anki0["piece"] == 17 and anki1["piece"] == 40) or (anki0["piece"] == 40 and anki1["piece"] == 17)) and anki0["clockwise"] != anki1["clockwise"]:
+    anki00 = anki0["piece"]
+    anki01 = anki1["piece"]
+    if ((anki00== 17 and anki01 == 40) or (anki00 == 40 and anki01)) and anki0["clockwise"] != anki1["clockwise"]:
         message = b"0"
         server.sendto(message, (addr0, 37020))
         server.sendto(message, (addr1, 37020))
