@@ -3,9 +3,11 @@ import time
 
 addr0 = "172.27.0.4"
 addr1 = "172.27.0.5"
+addr2 = "172.27.0.6"
 
 anki0 = {"clockwise": True, "piece": 0}
 anki1 = {"clockwise": True, "piece": 0}
+anki2 = {"clockwise": False, "piece": 0}
 
 server = socket.socket(socket.AF_INET, socket.SOCK_DGRAM, socket.IPPROTO_UDP)
 server.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
@@ -25,10 +27,15 @@ while True:
     if addr[0] == addr1:
         anki1["clockwise"] = clock_wise
         anki1["piece"] = piece
+      
+    if addr[0] == addr2:
+        anki2["clockwise"] = clock_wise
+        anki2["piece"] = piece
 
     # Logic part
     anki00 = anki0["piece"]
     anki01 = anki1["piece"]
+    anki02 = anki2["piece"]
     if ((anki00== 17 and anki01 == 40) or (anki00 == 40 and anki01)) and anki0["clockwise"] != anki1["clockwise"]:
         message = b"0"
         server.sendto(message, (addr0, 37020))
