@@ -1,3 +1,5 @@
+#! /usr/bin/env python3
+
 import socket
 from overdrive import Overdrive
 
@@ -10,7 +12,6 @@ def locationChangeCallback(addr, location, piece, speed, clockwise):
           str(piece) + " Location=" + str(location) + " Clockwise=" + str(clockwise))
     tmp_clockwise = str(clockwise)
     tmp_piece = str(piece)
-
 
 # UDP
 client = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)  # UDP
